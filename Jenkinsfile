@@ -3,8 +3,7 @@ pipeline {
     stages{
         stage('Build'){
            steps {
-              def branches = sh(returnStdout: true, script: "git branch --contains ${commitHash}")
-              echo 'branch = branches'
+              echo "branch: ${env.BRANCH_NAME}"
               echo 'Init basic-build'
               build job: 'basic-build'           
            }
