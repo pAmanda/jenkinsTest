@@ -2,8 +2,9 @@ pipeline {
     agent any
     stages{
         stage('Build'){
+          echo 'branch = ${env.BRANCH_NAME}'
           when{
-              expression { sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim() == '*/feature/*'}
+              expression { env.BRANCH_NAME == 'feature/*'}
           }
            steps {
               echo 'Init basic-build'
