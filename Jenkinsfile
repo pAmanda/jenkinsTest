@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Build'){
           when{
-              expression { sh(returnStdout: true, script: "git branch --contains ${commitId}") == '*/feature/*'}
+              expression { sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim() == '*/feature/*'}
           }
            steps {
               echo 'Init basic-build'
