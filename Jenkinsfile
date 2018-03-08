@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Build'){
            steps {
-              echo 'branch: ${env.BRANCH_NAME}'
+              echo 'branch: ${GIT_BRANCH}'
               echo 'Init basic-build'
               build job: 'basic-build'           
            }
