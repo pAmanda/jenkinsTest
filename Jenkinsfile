@@ -6,7 +6,7 @@ pipeline {
                 expression { GIT_BRANCH != '**/feature/*' }
             }
             steps {
-                echo 'testing'
+                echo 'tesdfdsting'
                 sh 'mvn clean package'
                 archiveArtifacts artifacts: '**/*.jar', fingerprint: true
                 build job: 'basic-build'
