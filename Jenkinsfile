@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Build'){
           when{
-              expression { ${env.BRANCH_NAME} == 'feature/*'}
+              expression { env.BRANCH_NAME == 'origin/feature/*'}
           }
            steps {
               echo 'Init basic-build'
