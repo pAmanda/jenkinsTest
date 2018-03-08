@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             when{
-                expression { GIT_BRANCH != '*/feature/*' }
+                expression { GIT_BRANCH != 'origin/feature/*' }
             }
             steps {
                 sh 'printenv'
