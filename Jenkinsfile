@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'testing'
                 sh 'mvn clean install'
-                archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
                 build job: 'basic-build'
             }
         }
