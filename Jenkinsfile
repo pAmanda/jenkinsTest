@@ -6,7 +6,7 @@ pipeline {
                 expression { GIT_BRANCH != '**/feature/*' }
             }
             steps {
-                echo 'testindsddsg' 
+                echo 'testing' 
                 build job: 'multipleJob'
             }
         }
