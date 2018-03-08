@@ -6,8 +6,7 @@ pipeline {
                 expression { GIT_BRANCH != '**/feature/*' }
             }
             steps {
-                sh 'printenv'
-                echo 'branch = ' + GIT_BRANCH
+                build job: 'basic-build'
             }
         }
     }
