@@ -10,7 +10,7 @@ pipeline {
         stage ('Build') {
             steps {
                 echo 'Initializing Build phase'
-                sh 'mvn clean install -Dmaven.test.skip=true Dmaven.javadoc.skip=true'
+                sh 'mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
             }
             steps {
                 echo 'Initializing Analyse phase'
-                sh 'mvn deploy -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
+                sh 'mvn deploy -Dmaven.test.skip=true'
             }
         }
 
