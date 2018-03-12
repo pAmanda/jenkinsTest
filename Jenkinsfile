@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo 'Branch = ' + GIT_BRANCH
                 echo 'Initializing Analyse phase'
-                sh 'mvn sonar:sonar'
+                sh 'git clone https://github.com/pAmanda/SpringBoot.git'
             }
         }
 
