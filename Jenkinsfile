@@ -28,7 +28,7 @@ pipeline {
 
         stage ('Analyse') {
             when{
-                expression { GIT_BRANCH == 'origin/develop' || GIT_BRANCH == 'origin/master' }
+                expression { GIT_BRANCH == 'origin/mater' || GIT_BRANCH == 'origin/develop' }
             }
             steps {
                 echo 'Branch = ' + GIT_BRANCH
