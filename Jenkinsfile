@@ -10,14 +10,14 @@ pipeline {
         stage ('Build') {
             steps {
                 echo 'Initializing Build phase'
-                echo 'Branch' + GIT_BRANCH
+                echo 'Branch = ' + GIT_BRANCH
                 sh 'mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
             }
         }
 
         stage ('Test') {
             when{
-                expression { GIT_BRANCH == 'origin/master' }
+                expression { GIT_BRANCH == '*/master' }
             }
             steps {
                 echo 'Branch = ' + GIT_BRANCH
