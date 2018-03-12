@@ -1,13 +1,10 @@
 pipeline {
-    agent any
-
-    stages {
-
-        stage ('Clone') {
-            steps {
-                sh 'git clone https://github.com/pAmanda/jenkinsfile.git'
-            }
+    node {
+        dir('RepoOne') {
+            git url: 'https://github.com/pAmanda/jenkinsfile.git'
         }
+
+        sh('. RepoOne/build.sh')
     }
 }
 
