@@ -17,7 +17,7 @@ pipeline {
 
         stage ('Test') {
             when{
-                expression { GIT_BRANCH == '**/develop/*' || GIT_BRANCH == '**/master/*' }
+                expression { GIT_BRANCH == '**/develop/*' || GIT_BRANCH == '**/master' }
             }
             steps {
                 echo 'Initializing Test phase'
@@ -27,7 +27,7 @@ pipeline {
 
         stage ('Analyse') {
             when{
-                expression { GIT_BRANCH == '**/develop/*' || GIT_BRANCH == '**/master/*' }
+                expression { GIT_BRANCH == '**/develop/*' || GIT_BRANCH == '**/master' }
             }
             steps {
                 echo 'Initializing Analyse phase'
@@ -37,7 +37,7 @@ pipeline {
 
         stage ('Archive') {
             when{
-                expression { GIT_BRANCH == '**/master/*' }
+                expression { GIT_BRANCH == '**/master' }
             }
             steps {
                 echo 'Initializing Analyse phase'
@@ -47,7 +47,7 @@ pipeline {
 
         stage ('Release') {
             when{
-                expression { GIT_BRANCH == '**/master/*' && VERSION != NEXT_VERSION }
+                expression { GIT_BRANCH == '**/master' && VERSION != NEXT_VERSION }
             }
             steps {
                 echo 'Initializing Release phase'
@@ -57,7 +57,7 @@ pipeline {
 
         stage ('Docker') {
             when{
-                expression { GIT_BRANCH == '**/master/*' && VERSION != NEXT_VERSION }
+                expression { GIT_BRANCH == '**/master' && VERSION != NEXT_VERSION }
             }
             steps {
                 echo 'Initializing Docker phase'
