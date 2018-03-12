@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'VERSION', defaultValue: '0.0.1-SNAPSHOT', description: 'Número da versão que será fechada.')
-        string(name: 'NEXT_VERSION', defaultValue: '0.0.2-SNAPSHOT', description: 'Próxima versão de desenvolvimento.')
+        string(name: 'version', defaultValue: '0.0.1-SNAPSHOT', description: 'Número da versão que será fechada.')
+        string(name: 'next_version', defaultValue: '0.0.2-SNAPSHOT', description: 'Próxima versão de desenvolvimento.')
     }
 
     stages {
@@ -53,7 +53,7 @@ pipeline {
             }
             steps {
                 echo 'Initializing Release phase'
-                echo params.VERSION + ' e ' + params.NEXT_VERSION
+                echo '${params.version} e ${params.next_version}'
                 sh 'mvn release:prepare release:perform -DreleaseVersion=' + params.VERSION + ' -DdevelopmentVersion='+ params.NEXT_VERSION'
             }
         }
