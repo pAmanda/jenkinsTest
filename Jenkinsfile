@@ -5,7 +5,9 @@ pipeline {
     stages {
 
         stage ('Build') {
-            fileLoader.fromGit('jenkinsfile/jenkinsfile', 'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '').start()
+            steps {
+                fileLoader.fromGit('jenkinsfile/jenkinsfile', 'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '').start()
+            }
         }
     }
 }
