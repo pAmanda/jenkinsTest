@@ -31,6 +31,7 @@ pipeline {
                 expression { GIT_BRANCH == 'origin/develop/**' || GIT_BRANCH == 'origin/master' }
             }
             steps {
+                echo 'Branch = ' + GIT_BRANCH
                 echo 'Initializing Analyse phase'
                 sh 'mvn sonar:sonar'
             }
