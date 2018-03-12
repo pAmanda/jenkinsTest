@@ -54,7 +54,8 @@ pipeline {
             steps {
                 echo 'Initializing Release phase'
                 echo '${params.version} e ${params.next_version}'
-                sh 'mvn release:prepare release:perform -DreleaseVersion=' + params.VERSION + ' -DdevelopmentVersion='+ params.NEXT_VERSION'
+                sh 'mvn release:prepare release:perform -Dresume=false -DdryRun=true'
+                
             }
         }
 
