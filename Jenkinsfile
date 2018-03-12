@@ -4,11 +4,9 @@ pipeline {
 
     stages {
 
-        def jenkinsFile
         stage ('Build') {
-           jenkinsFile = fileLoader.fromGit('jenkinsfile/jenkinsfile', 'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '')
+            fileLoader.fromGit('jenkinsfile/jenkinsfile', 'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '').start()
         }
-        jenkinsFile.start()
     }
 }
 
