@@ -20,6 +20,7 @@ pipeline {
                 expression { GIT_BRANCH == '**/develop/*' || GIT_BRANCH == '**/master' }
             }
             steps {
+                echo 'Branch' + GIT_BRANCH
                 echo 'Initializing Test phase'
                 sh 'mvn test'
             }
