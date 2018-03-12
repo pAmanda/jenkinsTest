@@ -42,8 +42,8 @@ pipeline {
                 expression { GIT_BRANCH == 'origin/master' }
             }
             steps {
-                echo 'Initializing Analyse phase'
-                sh 'mvn deploy -Dmaven.test.skip=true'
+                echo 'Initializing Archive phase'
+
             }
         }
 

@@ -7,9 +7,9 @@
   <packaging>war</packaging>
 
   <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.9.RELEASE</version>
+    <groupId>br.com.sippe.architecture.pom</groupId>
+    <artifactId>super-pom-microservice</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <properties>
