@@ -43,6 +43,7 @@ pipeline {
             }
             steps {
                 echo 'Initializing Archive phase'
+                echo 'mvn deploy -Dmaven.test.skip=true'
 
             }
         }
