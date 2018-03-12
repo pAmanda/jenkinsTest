@@ -1,16 +1,10 @@
 
-pipeline {
-    agent any
+stage 'Load a file from GitHub'
+def helloworld = fileLoader.fromGit('jenkinsfile/jenkinsfile', 
+        'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '')
 
-    stages {
-
-        stage ('Build') {
-            steps {
-                fileLoader.fromGit('jenkinsfile/jenkinsfile', 'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '').start()
-            }
-        }
-    }
-}
+stage 'Run method from the loaded file'
+helloworld.start()
 
 	
 
