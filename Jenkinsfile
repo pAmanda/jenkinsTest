@@ -9,7 +9,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                echo '${params.version} e ${params.next_version}'
+                echo '${parameters.version} e ${parameters.next_version}'
                 echo 'Initializing Build phase'
                 echo 'Branch = ' + GIT_BRANCH
                 sh 'mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
