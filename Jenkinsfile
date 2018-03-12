@@ -17,10 +17,10 @@ pipeline {
 
         stage ('Test') {
             when{
-                expression { GIT_BRANCH == '**/master' }
+                expression { GIT_BRANCH == 'origin/master' }
             }
             steps {
-                echo 'Branch' + GIT_BRANCH
+                echo 'Branch = ' + GIT_BRANCH
                 echo 'Initializing Test phase'
                 sh 'mvn test'
             }
