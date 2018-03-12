@@ -1,10 +1,9 @@
+def pipelineRepo = 'https://github.com/pAmanda/jenkinsfile.git'
+def pipeline = fileLoader.fromGit('integration,
+    pipelineRepo, 'master', null, '')
 
-stage 'test'	
-def helloworld = fileLoader.fromGit('jenkinsfile/integration.groovy', 
-        'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '')
-
-stage 'Run method from the loaded file'
-helloworld.start()
+// to make pipeline ignore failed tests pass true to runPipeline function
+pipeline.runPipeline(pipelineRepo)
 
 	
 
