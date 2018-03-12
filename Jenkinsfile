@@ -17,7 +17,7 @@ pipeline {
 
         stage ('Test') {
             when{
-                expression { GIT_BRANCH == '**/develop/*' || GIT_BRANCH == '**/master' }
+                expression { GIT_BRANCH == '**/master' }
             }
             steps {
                 echo 'Branch' + GIT_BRANCH
