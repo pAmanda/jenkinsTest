@@ -33,7 +33,6 @@ pipeline {
             steps {
                 echo 'Branch = ' + GIT_BRANCH
                 echo 'Initializing Analyse phase'
-                sh 'git clone https://github.com/pAmanda/SpringBoot.git'
             }
         }
 
