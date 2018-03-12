@@ -9,7 +9,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                echo 'Initializing Build phase'
+                echo 'Initializing Build phase...'
                 echo 'Branch = ' + GIT_BRANCH
                 sh 'mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
             }
