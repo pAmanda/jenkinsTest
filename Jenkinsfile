@@ -1,3 +1,5 @@
+import hudson.model.*
+
 def pipelineRepo = 'https://github.com/pAmanda/jenkinsfile.git'
 def pipeline = fileLoader.fromGit('integration', pipelineRepo, 'master', null, '')
 
