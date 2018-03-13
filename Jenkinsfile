@@ -1,4 +1,4 @@
-@Library(value='my-library', changelog=false)
+@Library(value="my-library@master", changelog=false)
     standardPipeline {
         projectName = "Abraão pé de feijão"
         serverDomain = "Project1 Server Domain"
