@@ -3,5 +3,5 @@ node {
         'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '')
 
    stage 'Run method from the loaded file'
-   test.start();
+   test.printHello();
 }
