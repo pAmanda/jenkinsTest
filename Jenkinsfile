@@ -1,11 +1,11 @@
-repository = "https://github.com/pAmanda/jenkinsfile.git"
-script = "jenkinsFile"
-branch = "master"
+repositoryUrl = "https://github.com/buildit/jenkins-pipeline-examples.git"
+script = "pipelines/meta-pipeline.groovy"
+branch = "development"
 
-source = "master"
+source = "development"
 target = "stable"
 
 node () {
-    git clone https://github.com/pAmanda/jenkinsfile.git
-    load script
+    git url: repositoryUrl, credentialsId: "git-credentials", branch: branch
+    load script    
 }
