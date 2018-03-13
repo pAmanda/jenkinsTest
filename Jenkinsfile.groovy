@@ -1,6 +1,6 @@
-repositoryUrl = "https://github.com/buildit/jenkins-pipeline-examples.git"
-script = "pipelines/meta-pipeline.groovy"
-branch = "development"
+repositoryUrl = "https://github.com/pAmanda/jenkinsfile.git"
+script = "helloworld.groovy"
+branch = "master"
 
 source = "development"
 target = "stable"
