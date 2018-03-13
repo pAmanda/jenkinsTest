@@ -13,13 +13,15 @@ pipeline {
                 echo 'Initializing Build phase'
                 echo 'Branch = ' + GIT_BRANCH
                 sh 'mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
-            }
-            when{
-                expression { GIT_BRANCH == 'origin/hotfix'}
-            }
-            steps {
-                echo 'Branch = ' + GIT_BRANCH
-                sh 'mvn clean install'
+                
+               when{
+                   expression { GIT_BRANCH == 'origin/hotfix'}
+               }
+               
+               steps {
+                   echo 'Branch = ' + GIT_BRANCH
+                   sh 'mvn clean install'
+               }
             }
         }
 
