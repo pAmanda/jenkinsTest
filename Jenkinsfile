@@ -1,8 +1,8 @@
-repositoryUrl = "https://github.com/pAmanda/jenkinsfile.git"
+repository = "https://github.com/pAmanda/jenkinsfile.git"
 script = "jenkinsFile"
 branch = "master"
 
 node () {
-    git url: repositoryUrl, branch: branch
+    git url: repository, branch: branch
     load script    
 }
