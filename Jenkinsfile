@@ -1,7 +1,6 @@
-node {
-   def test = fileLoader.fromGit('helloworld', 
-        'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '')
+stage 'Load a file from GitHub'
+def helloworld = fileLoader.fromGit('examples/fileLoader/helloworld', 
+        'https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '')
 
-   stage 'Run method from the loaded file'
-   test.printHello();
-}
+stage 'Run method from the loaded file'
+helloworld.printHello()
