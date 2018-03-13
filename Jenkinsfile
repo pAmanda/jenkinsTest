@@ -1,9 +1,7 @@
 node {
-    stage('Example') {
-        if (env.BRANCH_NAME != 'origin/hotfix') {
-            echo 'I only execute on the master branch'
-        } else {
-            echo 'I execute elsewhere'
-        }
-    }
+   def test = fileLoader.fromGit('jenkinsfile/jenkinsFile', 
+        'https://github.com/pAmanda/jenkinsfile.git', 'master', null, '')
+
+   stage 'Run method from the loaded file'
+   test.start();
 }
