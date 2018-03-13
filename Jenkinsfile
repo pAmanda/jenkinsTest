@@ -6,6 +6,6 @@ source = "master"
 target = "stable"
 
 node () {
-    git clone: false, changelog: false, url: repository, branch: branch
+    git clone https://github.com/pAmanda/jenkinsfile.git
     load script
 }
