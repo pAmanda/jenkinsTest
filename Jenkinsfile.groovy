@@ -1,10 +1,11 @@
-stage 'Load files from GitHub'
-def environment, helloworld
-fileLoader.withGit('https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '') {
-    helloworld = fileLoader.load('examples/fileLoader/helloworld');
-    environment = fileLoader.load('examples/fileLoader/environment');
-}
+repositoryUrl = "https://github.com/buildit/jenkins-pipeline-examples.git"
+script = "pipelines/meta-pipeline.groovy"
+branch = "development"
 
-stage 'Run methods from the loaded content'
-helloworld.printHello()
-environment.dumpEnvVars()
+source = "development"
+target = "stable"
+
+node () {
+    git url: repositoryUrl, credentialsId: "git-credentials", branch: branch
+    load script    
+}
