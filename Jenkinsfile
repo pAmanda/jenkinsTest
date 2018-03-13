@@ -1,6 +1,6 @@
 node {
     stage('Example') {
-        if (GIT_BRANCH != 'origin/hotfix') {
+        if (env.BRANCH_NAME != 'origin/hotfix') {
             echo 'I only execute on the master branch'
         } else {
             echo 'I execute elsewhere'
