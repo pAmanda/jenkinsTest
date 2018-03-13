@@ -1,6 +1,11 @@
-stage 'Load a file from GitHub'
-def helloworld = fileLoader.fromGit('examples/fileLoader/helloworld', 
-        'https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '')
+repository = "https://github.com/pAmanda/jenkinsfile.git"
+script = "jenkinsFile"
+branch = "master"
 
-stage 'Run method from the loaded file'
-helloworld.printHello()
+source = "master"
+target = "stable"
+
+node () {
+    git clone: false, changelog: false, url: repository, branch: branch
+    load script
+}
