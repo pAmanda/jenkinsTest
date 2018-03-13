@@ -1,6 +1,6 @@
  @Library('my-library') _
 
     standardPipeline {
-        projectName = "Project1"
+        projectName = "Abraão pé de feijão"
         serverDomain = "Project1 Server Domain"
     }
