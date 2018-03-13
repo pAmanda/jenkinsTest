@@ -3,6 +3,6 @@ script = "jenkinsFile"
 branchName = "master"
 
 node () {
-    git url: repositoryUrl, credentialsId: "git-credentials", branch: branchName
+    git url: repositoryUrl, branch: branchName
     load script    
 }
