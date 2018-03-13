@@ -1,5 +1,4 @@
- @Library('my-library') 
- import com.mycorp.pipeline.somelib.UsefulClass
+ @Library('my-library') _
 
     standardPipeline {
         projectName = "Project1"
