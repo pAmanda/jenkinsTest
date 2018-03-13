@@ -1,5 +1,5 @@
 repositoryUrl = "https://github.com/pAmanda/jenkinsfile.git"
-script = "helloworld.groovy"
+script = "jenkinsFile"
 branch = "master"
 
 source = "development"
