@@ -6,6 +6,6 @@ source = "master"
 target = "stable"
 
 node () {
-    git url: repository, branch: branch
+    git poll: false, changelog: false, url: repository, branch: branch
     load script    
 }
