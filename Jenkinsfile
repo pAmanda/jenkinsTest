@@ -2,6 +2,6 @@
     standardPipeline {
         projectName = "Abraão pé de feijão"
         serverDomain = "Project1 Server Domain"
-        xpto = "Projeto xptoaa"
+        xpto = "Projeto xptfdsfdsfsdoaa"
         version = "1.1.1-SNAPSHOT"
     }
