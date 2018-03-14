@@ -1,5 +1,5 @@
 standardPipeline {
-    project.artifactId = "jenkinsTest"
-    project.version = "1.0.0-SNAPSHOT"
-    next.version = "1.1.0-SNAPSHOT"
+    artifactId = "jenkinsTest"
+    version = "1.0.0-SNAPSHOT"
+    nextVersion = "1.1.0-SNAPSHOT"
 }
