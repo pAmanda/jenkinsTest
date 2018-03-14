@@ -1,1 +1,1 @@
-standardPipeline
+standardPipeline{}
