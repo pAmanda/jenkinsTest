@@ -3,14 +3,14 @@
 
   <groupId>jenkinsTest</groupId>
   <artifactId>jenkinsTest</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
  <scm>
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
     <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
     <url>https://github.com/pAmanda/jenkinsTest</url>
-    <tag>v0.0.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <parent>
@@ -21,10 +21,154 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <java.version.source>1.8</java.version.source>
+    <java.version.target>1.8</java.version.target>
+    <sonar.language>java</sonar.language>
+    <releases-repository>file:/Users/amanda.pires/.m2/repository/</releases-repository>
+    <snapshots-repository>file:/Users/amanda.pires/.m2/repository</snapshots-repository>
   </properties>
 
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+            <manifestEntries>
+              <java-version>${java.version}</java-version>
+              <java-vendor>${java.vendor}</java-vendor>
+              <os-name>${os.name}</os-name>
+              <os-arch>${os.arch}</os-arch>
+              <os-version>${os.version}</os-version>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>${java.version.source}</source>
+          <target>${java.version.target}</target>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct-processor</artifactId>
+              <version>1.2.0.Final</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.20</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <localCheckout>true</localCheckout>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <show>private</show>
+          <nohelp>true</nohelp>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>0.16.9</version>
+        <configuration>
+          <images>
+            <image>
+              <name>${registry}/${project.artifactId}:%l</name>
+              <build>
+                <dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile>
+                <assembly>
+                  <descriptorRef>artifact</descriptorRef>
+                </assembly>
+              </build>
+            </image>
+          </images>
+        </configuration>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
   <dependencies>
 
   <dependency>
@@ -57,32 +201,19 @@
 
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.3</version>
-        <configuration>
-          <releaseProfiles>release</releaseProfiles>
-          <tagNameFormat>v@{project.version}</tagNameFormat>
-        </configuration>
-     </plugin>
-    </plugins>
-  </build>
-
-  <distributionManagement>
+<distributionManagement>
     <repository>
-        <uniqueVersion>false</uniqueVersion>
-        <id>corp1</id>
-        <name>Corporate Repository</name>
-        <url>file:/Users/amanda.pires/.m2/repository</url>
-        <layout>default</layout>
+      <id>releases</id>
+      <name>Repositório de Releases</name>
+      <url>${releases-repository}</url>
+      <layout>default</layout>
     </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Repositório de Snapshots</name>
+      <url>${snapshots-repository}</url>
+      <layout>default</layout>
+    </snapshotRepository>
   </distributionManagement>
 
 </project>
