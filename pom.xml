@@ -3,14 +3,14 @@
 
   <groupId>jenkinsTest</groupId>
   <artifactId>jenkinsTest</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>war</packaging>
 
  <scm>
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
     <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
     <url>https://github.com/pAmanda/jenkinsTest</url>
-    <tag>HEAD</tag>
+    <tag>jenkinsTest-0.0.1</tag>
   </scm>
 
   <parent>
@@ -90,16 +90,6 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.19.1</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>2.20</version>
         <executions>
@@ -140,37 +130,10 @@
           <nohelp>true</nohelp>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>io.fabric8</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-        <version>0.16.9</version>
-        <configuration>
-          <images>
-            <image>
-              <name>${registry}/${project.artifactId}:%l</name>
-              <build>
-                <dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile>
-                <assembly>
-                  <descriptorRef>artifact</descriptorRef>
-                </assembly>
-              </build>
-            </image>
-          </images>
-        </configuration>
-      </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.sonarsource.scanner.maven</groupId>
-          <artifactId>sonar-maven-plugin</artifactId>
-          <version>3.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
-  <dependencies>
 
+  <dependencies>
   <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-data-jpa</artifactId>
