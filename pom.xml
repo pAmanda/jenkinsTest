@@ -10,6 +10,7 @@
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
     <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
     <url>https://github.com/pAmanda/jenkinsTest</url>
+    <tag>HEAD</tag>
   </scm>
 
   <parent>
@@ -24,8 +25,8 @@
     <java.version.source>1.8</java.version.source>
     <java.version.target>1.8</java.version.target>
     <sonar.language>java</sonar.language>
-    <releases-repository>file:/Users/amanda.pires/.m2/repository/</releases-repository>
-    <snapshots-repository>file:/Users/amanda.pires/.m2/repository</snapshots-repository>
+    <releases-repository>file:/Users/amanda.pires/.m2/repository/jenkinsTest/jenkinsTest/release</releases-repository>
+    <snapshots-repository>file:/Users/amanda.pires/.m2/repository/jenkinsTest/jenkinsTest/snapshot</snapshots-repository>
   </properties>
 
   <build>
