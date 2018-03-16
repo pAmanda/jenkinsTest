@@ -10,7 +10,7 @@
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
     <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
     <url>https://github.com/pAmanda/jenkinsTest</url>
-    <tag>HEAD</tag>
+    <tag>jenkinsTest-0.0.2</tag>
   </scm>
 
   <parent>
