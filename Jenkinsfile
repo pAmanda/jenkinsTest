@@ -1,1 +1,3 @@
-standardPipeline{}
+standardPipeline{
+	branch = GIT_BRANCH
+}
