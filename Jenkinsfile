@@ -1,3 +1,3 @@
 standardPipeline{
-  branch = GIT_BRANCH
+  branch = env.BRANCH_NAME
 }
