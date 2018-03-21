@@ -8,6 +8,6 @@ public class Controller {
 
   @GetMapping("/")
   public String webApp() {
-      return "Hello World, people!";
+      return "Hello World!";
   }
 }
