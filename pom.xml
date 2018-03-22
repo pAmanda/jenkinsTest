@@ -3,9 +3,9 @@
 
   <groupId>jenkinsTest</groupId>
   <artifactId>jenkinsTest</artifactId>
-  <version>0.0.11-SNAPSHOT</version>
+  <version>0.0.12-SNAPSHOT</version>
   <packaging>war</packaging>
-
+  
  <scm>
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
     <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
@@ -20,6 +20,7 @@
   </parent>
 
   <properties>
+    <project.test.version>1</project.test.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
     <java.version.source>1.8</java.version.source>
