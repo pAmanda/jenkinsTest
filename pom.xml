@@ -4,7 +4,7 @@
   <groupId>jenkinsTest</groupId>
   <artifactId>jenkinsTest</artifactId>
   <version>0.0.13-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   
  <scm>
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
