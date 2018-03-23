@@ -3,16 +3,34 @@
 
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>jenkinsTest</groupId>
+  <artifactId>jenkinsTest</artifactId>
+  <version>0.0.13-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+ <scm>
+    <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
+    <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
+    <url>https://github.com/pAmanda/jenkinsTest</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <parent>
     <groupId>br.com.sippe.architecture.pom</groupId>
     <artifactId>super-pom-microservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-	<groupId>sippe-jenkins-poc</groupId>
-	<artifactId>sippe-jenkins-poc</artifactId>
-	<version>0.0.10-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <properties>
+    <project.test.version>1</project.test.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <java.version.source>1.8</java.version.source>
+    <java.version.target>1.8</java.version.target>
+    <sonar.language>java</sonar.language>
+    <releases-repository>file:/Users/amanda.pires/.m2/repository/jenkinsTest/jenkinsTest/release</releases-repository>
+    <snapshots-repository>file:/Users/amanda.pires/.m2/repository/jenkinsTest/jenkinsTest/snapshot</snapshots-repository>
+  </properties>
 
 
   <developers>
@@ -23,13 +41,6 @@
       <organizationUrl>http://www.cabal.com.br</organizationUrl>
     </developer>
   </developers>
-
-	<scm>
-		<connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
-		<developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
-		<url>https://github.com/pAmanda/jenkinsTest</url>
-		<tag>HEAD</tag>
-	</scm>
 
   <dependencies>
 
