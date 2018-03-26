@@ -4,3 +4,4 @@ ADD maven/sippe-jenkins-poc.jar /opt/microservice/sippe-jenkins-poc.jar
 WORKDIR /opt/microservice
 EXPOSE 8080
 ENTRYPOINT ["java", "-Duser.timezone=America/Sao_Paulo", "-Djava.security.egd=file:/dev/./urandom", "-Xmx1024m", "-jar", "sippe-jenkins-poc.jar"]
+
