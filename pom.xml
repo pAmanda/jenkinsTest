@@ -6,7 +6,7 @@
   <version>0.0.48-SNAPSHOT</version>
   <packaging>jar</packaging>
    
- <scm>
+  <scm>
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
     <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
     <url>https://github.com/pAmanda/jenkinsTest</url>
@@ -182,9 +182,9 @@
     <artifactId>spring-boot-devtools</artifactId>
     <scope>runtime</scope>
   </dependency>
-</dependencies>
+  </dependencies>
 
-<distributionManagement>
+  <distributionManagement>
     <repository>
       <id>releases</id>
       <name>Repositório de Releases</name>
