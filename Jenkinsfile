@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-              steps {
-                sh 'echo' + Amanda
-              } 
+                echo "Parameter: " + Amanda
             }
         }
     }
