@@ -2,7 +2,7 @@ pipeline {
     agent any 
     stages {
         stage('Build') { 
-            echo "Parameter: " + Amanda
+            echo "Parameter: " + CABAL
         }
     }
 }
