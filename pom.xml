@@ -5,6 +5,8 @@
   <artifactId>sippe-jenkins-poc</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>    
+  
+  
   <scm>
     <connection>scm:git:https://github.com/pAmanda/jenkinsTest</connection>
     <developerConnection>scm:git:https://github.com/pAmanda/jenkinsTest</developerConnection>
